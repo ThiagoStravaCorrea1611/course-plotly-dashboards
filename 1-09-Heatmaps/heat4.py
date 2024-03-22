@@ -34,7 +34,9 @@ trace3 = go.Heatmap(
     zmin = 5, zmax = 40
 )
 
-fig = tools.make_subplots(rows=1, cols=3,
+fig = tools.make_subplots(
+    rows=1,
+    cols=3,
     subplot_titles=('Sitka, AK','Santa Barbara, CA', 'Yuma, AZ'),
     shared_yaxes = True,  # this makes the hours appear only on the left
 )

@@ -53,8 +53,12 @@ def callback_image(hoverData):
     wheel=hoverData['points'][0]['y']
     color=hoverData['points'][0]['x']
     path = '../data/images/'
-    return encode_image(path+df[(df['wheels']==wheel) & \
-    (df['color']==color)]['image'].values[0])
+    full_path = path+df[(df['wheels']==wheel) & \
+        (df['color']==color)]['image'].values[0]
+    
+    encoded_img = encode_image(full_path)
+    
+    return encoded_img
 
 if __name__ == '__main__':
     app.run_server()

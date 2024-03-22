@@ -34,6 +34,30 @@ app.layout = html.Div([
                 hovermode='closest'
             )
         }
+    ),
+    dcc.Graph(
+        id='scatter2',
+        figure={
+            'data': [
+                go.Scatter(
+                    x = random_y,
+                    y = random_x,
+                    mode = 'markers',
+                    marker = {
+                        'size': 12,
+                        'color': 'rgb(67,150,203)',
+                        'symbol': 'pentagon',
+                        'line': {'width': 2}
+                        }
+                )
+            ],
+            'layout': go.Layout(
+                title = 'Transposed Random Data Scatterplot',
+                xaxis = {'title': 'Some random x-values'},
+                yaxis = {'title': 'Some random y-values'},
+                hovermode='closest'
+            )
+        }
     )
 ])
 

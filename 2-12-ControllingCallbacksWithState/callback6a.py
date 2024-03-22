@@ -28,7 +28,7 @@ app.layout = html.Div([
     [Input('submit-button', 'n_clicks')],
     [State('number-in', 'value')])
 def output(n_clicks, number):
-    return number
+    return f"{number} was typed in and the button was clicked {n_clicks} times"
 
 if __name__ == '__main__':
     app.run_server()

@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 df = pd.read_csv('../data/2010SantaBarbaraCA.csv')
-
+print(df.LST_DATE.unique())
 data = [go.Heatmap(
     x=df['DAY'],
     y=df['LST_TIME'],

@@ -17,8 +17,6 @@ print(df)
 
 # You can select columns with a bracket call:
 print(df['Name'])
-
-
 print(df['Salary'])
 
 
@@ -31,35 +29,37 @@ print(df[['Name','Salary']])
 # on a pandas dataframe.
 
 print(df['Age'].mean())
-
+print(df['Salary'].min())
 
 # Just like Numpy, we can use conditional filtering to select rows that meet
 # certain critera. Like choosing rows where the Age value is greater than 30
 
-ser_of_bool = df['Age'] > 30
-print(ser_of_bool)
+#ser_of_bool = df['Age'] > 30
+#print(ser_of_bool)
 
 # Use this filter of booleans to then select the rows
 
-age_filter = df['Age'] > 30
+#age_filter = df['Age'] > 30
 
 # Pass it to the dataframe
-print(df[age_filter])
+#print(df[age_filter])
 
 
 # More commonly done all in one step:
-df[df['Age'] > 30]
+#df[df['Age'] > 30]
 
 
 # There are lots of other commands you can do with pandas!
 # But for now, we'll just talk about a few more, and then introduce the rest
 # as we continue through the course :)
 
-df['Age'].unique() # list of unique values for Age
-df['Age'].nunique() # number of unqiue values
-df.info() # General info about your dataframe
-df.describe() # Statistics about your dataframe
-df.columns # Grab a list of all columns
-df.index # Create an index list
+#print(df['Age'].unique()) # list of unique values for Age
+#print(df['Age'].nunique()) # number of unqiue values
+#print(df.info()) # General info about your dataframe
+#print(df.describe()) # Statistics about your dataframe
+#print(df.columns) # Grab a list of all columns
+#print(df.index) # Create an index list
 # You can convert a numpy matrix to a dataframe with:
 mat = np.arange(50).reshape(5,10)
+df_mat = pd.DataFrame(data=mat)
+print(df_mat)

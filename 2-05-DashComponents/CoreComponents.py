@@ -3,10 +3,22 @@
 # Feel free to add things to it that you find useful.
 ######
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 
 app = dash.Dash()
+
+#app.layout = html.Div(
+#    [
+#        'This is the outermost Div',
+#        html.Div(
+#            'This is an inner Div',
+#            style={'color':'red', 'border':'1px red solid'}),
+#        html.Div(
+#            'Another inner Div',
+#            style={'color':'blue', 'border':'3px blue solid'})
+#    ],
+#    style={'color':'green', 'border':'2px green solid'})
 
 app.layout = html.Div([
 

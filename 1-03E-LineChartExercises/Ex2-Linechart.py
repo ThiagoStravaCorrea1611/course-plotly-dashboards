@@ -5,7 +5,9 @@
 ######
 
 # Perform imports here:
-
+import pandas as pd
+import plotly.offline as pyo
+import plotly.graph_objs as go
 
 
 
@@ -15,17 +17,20 @@ days = ['TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY','MONDAY']
 
 
 # Use a for loop (or list comprehension to create traces for the data list)
-data = []
-
-for day in days:
-    # What should go inside this Scatter call?
-    trace = go.Scatter()
-    data.append(trace)
+data = [go.Scatter(
+    x=df[df['DAY'] == day].LST_TIME,
+    y=df[df['DAY'] == day].T_HR_AVG,
+    mode='lines',
+    name=day) for day in days]
 
 # Define the layout
-
-
-
-
+layout = go.Layout(
+    title='Line Charts')
 
 # Create a fig from data and layout, and plot the fig
+fig = go.Figure(
+    data=data,
+    layout=layout)
+
+pyo.plot(fig,
+         filename = 'my_solution2a.html')

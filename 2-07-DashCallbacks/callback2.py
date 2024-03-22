@@ -1,6 +1,6 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
@@ -18,7 +18,10 @@ for year in df['year'].unique():
 
 app.layout = html.Div([
     dcc.Graph(id='graph'),
-    dcc.Dropdown(id='year-picker',options=year_options,value=df['year'].min())
+    dcc.Dropdown(
+        id='year-picker',
+        options=year_options,
+        value=df['year'].min())
 ])
 
 @app.callback(Output('graph', 'figure'),

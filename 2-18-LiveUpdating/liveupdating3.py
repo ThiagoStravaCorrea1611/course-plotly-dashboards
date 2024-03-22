@@ -5,8 +5,8 @@
 #    AND GRAPHS THOSE RESULTS OVER TIME! **
 ######
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import html
+from dash import dcc
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import requests
@@ -15,7 +15,10 @@ app = dash.Dash()
 
 app.layout = html.Div([
     html.Div([
-        html.Iframe(src = 'https://www.flightradar24.com', height = 500, width = 1200)
+        html.Iframe(
+            src = 'https://www.flightradar24.com',
+            height = 500,
+            width = 1200)
     ]),
 
     html.Div([
